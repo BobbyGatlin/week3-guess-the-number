@@ -7,7 +7,7 @@ import random
 #   'topLimit' which is the top limit for the random number generator
 # the function returns the random number generated to its caller
 def generateNumber( topLimit ):
-    secretNumber=random.randint(1,toplimit)
+    secretNumber=random.randint(1,topLimit)
     return secretNumber
     
     # TO DO: ####################################################
@@ -15,6 +15,8 @@ def generateNumber( topLimit ):
     # returns a random number between 1 and the user's topLimit #
     #############################################################
     
+
+
 # end of generateNumber function -------------------------------------
 
 
@@ -46,15 +48,14 @@ def askUserToGuess( times, secretNumber ):
 #   the 'userGuess' parameter is the answer entered by the user
 #   the 'userSecretNumber' parameter is the randomly generated number
 def evaluateAnswer( userGuess, userSecretNumber ):
-
     if userGuess < userSecretNumber:
         print('Your guess is too low.')
-        return false
+        return False
     elif userGuess > userSecretNumber:
         print('Your guess is too high.')
-        return false
+        return False
     else:
-        return true
+        return True
     
     # TO DO: ####################################################
     # Write code in this function that compares userGuess and   #
@@ -77,12 +78,15 @@ def evaluateAnswer( userGuess, userSecretNumber ):
 #       True, we'll show the right answer on the screen
 #       False, we won't show the right answer on the screen
 def playGame( showAnswer ):
-
     print("Welcome to my number guessing game!")
+    name=input('What is Your Name?')
+    print('Nice to meet you '+name+'!')
+    
     maxLimit=int(input('What is the largest number you would like to guess?')) 
     totalGuesses=int(input('How many times would you like to guess?'))
+    
     theNumber=generateNumber(maxLimit)
-    print('Take a guess between 1 and '+str(maxLimit)+'. You have '+str(totalGuesses)+'left.')
+    print('Take a guess between 1 and '+str(maxLimit)+'. You have '+str(totalGuesses)+' left.')
 
 
     
